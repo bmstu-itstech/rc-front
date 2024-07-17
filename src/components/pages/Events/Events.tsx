@@ -15,6 +15,7 @@ import SliderNavigateButton from "./widgets/SliderNavigateButton";
 import {AppConfig} from "../../../core";
 
 
+
 class Colors {
     static red = '#C13100';
 }
