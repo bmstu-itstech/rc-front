@@ -1,5 +1,6 @@
 import './events.scss'
 
+import './tailwindPreflight.css'
 import React, {ReactElement, useState} from 'react';
 import logo from '../../assets/icons/logo.svg';
 import Carousel from 'react-bootstrap/Carousel';
