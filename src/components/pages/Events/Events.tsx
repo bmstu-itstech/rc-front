@@ -1,4 +1,6 @@
 import './events.scss'
+import '../../../tailwindPreflight.css';
+
 import React, {ReactElement, useState} from 'react';
 import logo from '../../assets/icons/logo.svg';
 import Carousel from 'react-bootstrap/Carousel';
@@ -91,9 +93,9 @@ const LayoutComponent = ({children, backgroundImageUrl}: {
                             src={logo}
                             className={`
                             tw-absolute
-                            tw-mt-5 lg:tw-mt-15 xl:tw-mt-40
-                            tw-ml-5 lg:tw-ml-15 xl:tw-ml-40
-                            tw-h-12 tw-w-12 lg:tw-h-20 lg:tw-w-20 xl:tw-h-28 xl:tw-w-28
+                            tw-mt-5 lg:tw-mt-15
+                            tw-ml-5 lg:tw-ml-15
+                            tw-h-12 tw-w-12 lg:tw-h-20 lg:tw-w-20 
                             `}
                             alt='logo'
                             style={{
