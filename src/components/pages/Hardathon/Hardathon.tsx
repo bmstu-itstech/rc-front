@@ -1,28 +1,66 @@
 import "./hardathon.scss"
 import Logo from "../../utils/logo/Logo"
 import bizikov from "../../assets/images/bizikov.png"
-import React, {useEffect, useState} from "react";
+import React, {ReactElement, useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import {AppConfig} from "../../../core";
+import {useQuery} from '@tanstack/react-query';
+import {hardathonID, hardathonList} from "../../../shown/api/hardathon";
 
-interface Hardathon {
-    title: string,
-    photo: string
-}
+import {Hardathons, ShortHardathon} from "../../../dom/hardathon";
+
+
 
 export const Hardathon = () => {
+    const hardathonPlace: Hardathons = {
+        id: -1,
+        title: '',
+        photo_album_url:'',
+        documents_url:'',
+        location_url:'',
+        date_for_accepting_application:'',
+        closing_date_for_applications:'',
+        summing_up_date:'',
+        main_organizer_photo:'',
+        main_organizer_word: '',
+        competition_task:'',
+    }
 
-    const [hardathons, setHardathons] = useState<Hardathon[]>([]);
+    const {data: hardathon} = useQuery<ShortHardathon[]>({
+            queryKey: ['hardathon-list'],
+            queryFn: () => hardathonList(),
+            placeholderData: () => [
+                {
+                    id:1,
+                    title:'Hardathons',
+                    main_organizer_photo:'',
+                    main_organizer_word: '',
+                }
+            ],
+        }
+    );
 
-    useEffect(() => {
-        axios.get(`${AppConfig.apiUri}/api/v0/hardatons/?page=1`)
-            .then(res => {
-                setHardathons(res.data.hardatons);
-            }).catch(err => {
-                console.log(err);
-        })
-    }, []);
+    const items: ShortHardathon[] = hardathon ?? [];
+
+    const [index, setIndex] = useState(0);
+
+    const {data: fullEvent} = useQuery<Hardathons>({
+        enabled: items[index] !== undefined && items[index].id >= 0,
+        queryKey: ['hardathon', items[index]?.id],
+        queryFn: () => fetch('${AppConfig.apiUri}/api/v0/hardathons/${items[index].id}/').then(r => r.json()),
+    placeholderData: _ => hardathonPlace
+});
+
+    const handleSelect = (selectedIndex: number) => {
+        if (selectedIndex < 0)
+            setIndex(items.length - 1);
+        else if (selectedIndex >= items.length)
+            setIndex(0);
+        else
+            setIndex(selectedIndex);
+    };
+
 
     const slideRight = () => {
         const board = document.querySelector('.board');
@@ -47,6 +85,7 @@ export const Hardathon = () => {
             }
         }
     }
+
 
     return (
         <section className={"page events-page"}>
