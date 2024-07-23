@@ -1,5 +1,5 @@
 import './events.scss'
-import '../../../tailwindPreflight.css';
+// import '../../../tailwindPreflight.css';
 
 import React, {ReactElement, useState} from 'react';
 import logo from '../../assets/icons/logo.svg';
@@ -186,6 +186,7 @@ export const EventsPage = () => {
     // @ts-ignore
     return (
         <>
+            <link rel="stylesheet" type="text/css" href="/tailwind-preflight.css"/>
             {
                 popup === PopupType.listParticipants ? <ListPopup
                     backgroundColor={Colors.red}
@@ -199,7 +200,7 @@ export const EventsPage = () => {
                                     setParticipant(questionnaire.id);
                                 }}
                             >
-                                    {`Анкета от ${questionnaire.searcher_fio}`}
+                                {`Анкета от ${questionnaire.searcher_fio}`}
                             </ListPopupTile>
                         )
                     }
