@@ -1,4 +1,5 @@
 import './events.scss'
+import './tailwindPreflight.css'
 import React, {ReactElement, useState} from 'react';
 import logo from '../../assets/icons/logo.svg';
 import Carousel from 'react-bootstrap/Carousel';
@@ -11,7 +12,6 @@ import {AppConfig} from "../../../core";
 import EventCard from "./widgets/EventCard";
 import {ShortEvent, Event, ShortQuestionnaire} from "./entity";
 import SliderNavigateButton from "./widgets/SliderNavigateButton";
-
 
 class Colors {
     static red = '#C13100';
