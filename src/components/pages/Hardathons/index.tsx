@@ -1,6 +1,8 @@
 import {FC, HTMLAttributes} from "react";
 import HardathonsCardSampleImage from '../../assets/images/hardathons-card-sample-image.png';
 import HardathonsBG from '../../assets/images/hardathons-bg.png';
+import {Link} from "react-router-dom";
+import '../../../tailwindPreflight.css';
 
 interface HardathonCardProps {
     image: string;
@@ -41,9 +43,11 @@ const HardathonsPage: FC<HTMLAttributes<HTMLDivElement>> = () => {
         <div
             className={
                 `
-            tw-w-full tw-min-h-screen tw-text-white
+            tw-w-full tw-min-h-screen 
+            tw-text-white
             tw-px-4 lg:tw-px-40
             tw-bg-opacity-70
+            tw-pb-4
             `
             }
             style={{
@@ -65,8 +69,8 @@ const HardathonsPage: FC<HTMLAttributes<HTMLDivElement>> = () => {
             </h2>
             <div className={'tw-h-10 lg:tw-h-24  xl:tw-h-36'}/>
             <div className={'tw-flex tw-gap-14 mx-auto tw-justify-center tw-flex-wrap'}>
-                <HardathonCard image={HardathonsCardSampleImage}/>
-                <HardathonCard image={HardathonsCardSampleImage}/>
+                <Link to={'/hardathons/1'} className={'tw-h-fit tw-w-fit'}><HardathonCard image={HardathonsCardSampleImage}/></Link>
+                <Link to={'/hardathons/1'} className={'tw-h-fit tw-w-fit'}><HardathonCard image={HardathonsCardSampleImage}/></Link>
             </div>
         </div>
     );
