@@ -3,20 +3,17 @@ import React, { useEffect, useState } from "react";
 import Logo from "../../../utils/logo/Logo"
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { Hardathons, ShortHardathon } from "./../../../../dom/hardathon";
+import { Hardathons } from "./../../../../dom/hardathon";
 import { hardathonPlaceholder } from './../../../../shared/consts/placeholders'
 import { useLocation } from 'react-router-dom';
 
 export const ProjectDetails = () => {
     let location = useLocation();
-    
-    // const items: Hardathons[] = hardathon ?? [];
 
     const  { data: fullEvent } = useQuery<Hardathons>({
-        // enabled: items[index] !== undefined && items[index].id >= 0,
         queryKey: ['hardathonID', location],
         queryFn: () => fetch(`${location}`).then(r => r.json()),
-        placeholderData: _ => hardathonPlaceholder
+        placeholderData: hardathonPlaceholder
     });
 
     return (
