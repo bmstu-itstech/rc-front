@@ -1,13 +1,13 @@
 import { client } from './axios';
-import { ShortHardathon } from '../../dom/hardathon';
+import { Hardathons, ShortHardathon } from '../../dom/hardathon';
 
-const hardathonID: (id: number) => Promise<ShortHardathon[]> = async (id: number) => {
-    const res = await client.get('/api/v0/hardathons/?page=${id}');
-    const events = res.data['hardathons'];
+const hardathonID: (id: number) => Promise<Hardathons[]> = async (id: number) => {
+    const res = await client.get(`/api/v0/hardathons/${id}`);
+    const data = res.data;
     if (res.status >= 300) {
         throw new Error();
     }
-    return events;
+    return data;
 };
 
 const hardathonList: () => Promise<ShortHardathon[]> = async () => {

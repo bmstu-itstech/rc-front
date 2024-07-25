@@ -1,56 +1,30 @@
 import "./hardathon.scss"
 import Logo from "../../utils/logo/Logo"
 import bizikov from "../../assets/images/bizikov.png"
-import React, {ReactElement, useState} from "react";
+import React, { ReactElement, useState } from "react";
 import axios from "axios";
-import {Link} from "react-router-dom";
-import {AppConfig} from "../../../core";
-import {useQuery} from '@tanstack/react-query';
-import {hardathonID, hardathonList} from "../../../shown/api/hardathon";
+import { Link } from "react-router-dom";
+import { AppConfig } from "../../../core";
+import { useQuery } from '@tanstack/react-query';
+import { hardathonID, hardathonList } from "../../../shown/api/hardathon";
 
-import {Hardathons, ShortHardathon} from "../../../dom/hardathon";
-
+import { Hardathons, ShortHardathon } from "../../../dom/hardathon";
+import { hardathonPlaceholder, hardathonShortPlaceholder } from './../../../shared/consts/placeholders'
 
 
 export const Hardathon = () => {
-    const hardathonPlace: Hardathons = {
-        id: -1,
-        title: '',
-        photo_album_url:'',
-        documents_url:'',
-        location_url:'',
-        date_for_accepting_application:'',
-        closing_date_for_applications:'',
-        summing_up_date:'',
-        main_organizer_photo:'',
-        main_organizer_word: '',
-        competition_task:'',
-    }
 
-    const {data: hardathon} = useQuery<ShortHardathon[]>({
-            queryKey: ['hardathon-list'],
-            queryFn: () => hardathonList(),
-            placeholderData: () => [
-                {
-                    id:1,
-                    title:'Hardathons',
-                    main_organizer_photo:'',
-                    main_organizer_word: '',
-                }
-            ],
-        }
+    const { data: hardathon } = useQuery<ShortHardathon[]>({
+        queryKey: ['hardathon-list'],
+        queryFn: () => hardathonList(),
+        placeholderData: () => [hardathonShortPlaceholder],
+    }
     );
 
     const items: ShortHardathon[] = hardathon ?? [];
 
     const [index, setIndex] = useState(0);
 
-    const {data: fullEvent} = useQuery<Hardathons>({
-        enabled: items[index] !== undefined && items[index].id >= 0,
-        queryKey: ['hardathon', items[index]?.id],
-        queryFn: () => fetch('${AppConfig.apiUri}/api/v0/hardathons/${items[index].id}/').then(r => r.json()),
-    placeholderData: _ => hardathonPlace
-});
 
     const handleSelect = (selectedIndex: number) => {
         if (selectedIndex < 0)
@@ -89,12 +63,12 @@ export const Hardathon = () => {
 
     return (
         <section className={"page events-page"}>
-            <Logo title="Хардатон 2024"/>
+            <Logo title="Хардатон 2024" />
             <div className={"board-outer d-flex justify-content-center"}>
                 <div className="board">
                     <div className={"bizikov-pic"}>
                         <div className={"d-flex justify-content-center"}>
-                            <img src={bizikov} alt=""/>
+                            <img src={bizikov} alt="" />
                         </div>
 
                     </div>
@@ -102,7 +76,7 @@ export const Hardathon = () => {
                         <div className={"quote"}>
                             <p>Давно полюбившийся формат робототехнических соревнований, где в течение нескольких дней финала участники разрабатывают робототехнический проект на определённую тему, а затем командам предстоит защитить свою работу.</p>
                             <p className={"author"}>— главный организатор хардатона,
-                                Валерий Бизиков</p>
+                                Валерий Бизиков </p>
                         </div>
                         <div className={"buttons"}>
                             <Link to={"/hardathons/1/details"}>
