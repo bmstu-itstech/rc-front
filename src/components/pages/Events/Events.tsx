@@ -1,5 +1,6 @@
 import './events.scss'
 import './tailwindPreflight.css'
+
 import React, {ReactElement, useState} from 'react';
 import logo from '../../assets/icons/logo.svg';
 import Carousel from 'react-bootstrap/Carousel';
@@ -8,6 +9,10 @@ import {ListPopupTile} from './widgets/ListPopup/ListPopupTile';
 import {useQuery} from '@tanstack/react-query';
 import templateBGImage from '../../assets/images/events-template-bg.png';
 import moment from 'moment';
+import {eventList} from "../../../shared/apis/events";
+import EventCard from "./widgets/EventCard";
+import {ShortEvent, Event, ShortQuestionnaire} from "./entity";
+import SliderNavigateButton from "./widgets/SliderNavigateButton";
 import {AppConfig} from "../../../core";
 import EventCard from "./widgets/EventCard";
 import {ShortEvent, Event, ShortQuestionnaire} from "./entity";
@@ -130,11 +135,9 @@ enum PopupType {
 export const Events = () => {
     const [popup, setPopup] = useState<PopupType>(PopupType.none);
 
-    const {data: eventsList} = useQuery<ShortEvent[]>({
+    const {data: events} = useQuery<ShortEvent[]>({
             queryKey: ['event-list'],
-            queryFn: () => fetch(`${AppConfig.apiUri}/api/v0/classic_events/`)
-                .then(r => r.json())
-                .then(d => d['events']),
+            queryFn: () => eventList(),
             placeholderData: () => [
                 {
                     id: 1,
@@ -145,12 +148,12 @@ export const Events = () => {
         }
     );
 
-    const items: ShortEvent[] = eventsList ?? [];
+    const items: ShortEvent[] = events ?? [];
 
     const [index, setIndex] = useState(0);
 
     const {data: fullEvent} = useQuery<Event>({
-        enabled: items[index] !== undefined,
+        enabled: items[index] !== undefined && items[index].id >= 0,
         queryKey: ['events', items[index]?.id],
         queryFn: () => fetch(`${AppConfig.apiUri}/api/v0/classic_events/${items[index].id}/`).then(r => r.json()),
         placeholderData: _ => placeholderEvent,
@@ -184,6 +187,7 @@ export const Events = () => {
     // @ts-ignore
     return (
         <>
+            <link rel="stylesheet" type="text/css" href="/tailwind-preflight.css"/>
             {
                 popup === PopupType.listParticipants ? <ListPopup
                     backgroundColor={Colors.red}
