@@ -1,10 +1,21 @@
 import "./ProjectDetails.scss"
 import React, {useEffect, useState} from "react";
 import Logo from "../../../utils/logo/Logo"
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { Hardathons } from "./../../../../dom/hardathon";
+import { hardathonPlaceholder } from './../../../../shared/consts/placeholders'
+import { useLocation } from 'react-router-dom';
 
 export const ProjectDetails = () => {
+    let location = useLocation();
+
+    const  { data: fullEvent } = useQuery<Hardathons>({
+        queryKey: ['hardathonID', location],
+        queryFn: () => fetch(`${location}`).then(r => r.json()),
+        placeholderData: hardathonPlaceholder
+    });
+
     return (
         <section className={"page page-section"}>
             <Logo title="хардатон 2024"/>
