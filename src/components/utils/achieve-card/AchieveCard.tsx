@@ -64,7 +64,7 @@ const AchieveCard = ({
                     <div className={'card-img-overlay overlay-gradient '}>
                         <h3
                             className={`
-                                card-title text-uppercase text-center  tw-items-center tw-h-full trunc2 tw-text-ellipsis
+                                card-title text-uppercase text-center  tw-items-center tw-h-full text-truncate
                                 ${
                                     index === 0
                                         ? 'tw-whitespace-nowrap tw-max-w-[50%] tw-text-ellipsis tw-overflow-hidden'
