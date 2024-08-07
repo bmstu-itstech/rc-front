@@ -33,7 +33,7 @@ const NewsCard = ({
                     <p className='m-0  text-white'>{title}</p>
                 </div>
                 <div className='card-text'>
-                    <p className='m-0 text-black lh-sm text-weight-normal text-truncate'>
+                    <p className='m-0 text-black lh-sm text-weight-normal trunc tw-text-ellipsis '>
                         {description}
                     </p>
                 </div>
