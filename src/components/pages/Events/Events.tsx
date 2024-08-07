@@ -15,9 +15,7 @@ import EventCard from "./widgets/EventCard";
 import {ShortEvent, Event, ShortQuestionnaire} from "./entity";
 import SliderNavigateButton from "./widgets/SliderNavigateButton";
 import {AppConfig} from "../../../core";
-import EventCard from "./widgets/EventCard";
-import {ShortEvent, Event, ShortQuestionnaire} from "./entity";
-import SliderNavigateButton from "./widgets/SliderNavigateButton";
+
 
 
 class Colors {
@@ -134,7 +132,7 @@ enum PopupType {
     participant,
 }
 
-export const Events = () => {
+export const EventsPage = () => {
     const [popup, setPopup] = useState<PopupType>(PopupType.none);
 
     const {data: events} = useQuery<ShortEvent[]>({

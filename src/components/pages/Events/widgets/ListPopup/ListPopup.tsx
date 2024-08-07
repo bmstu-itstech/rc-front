@@ -1,11 +1,9 @@
 import React, {FC} from "react";
-import React, {FC} from "react";
 import closeIcon from "../../../../assets/icons/close.svg";
 import backIcon from "../../../../assets/icons/back.svg";
 import Button from "../Button";
 import {AppTextTheme} from "../../theme";
-import Button from "../Button";
-import {AppTextTheme} from "../../theme";
+
 
 interface ListPopupProps {
     onClose?: () => void,
@@ -15,12 +13,6 @@ interface ListPopupProps {
     backgroundColor?: string
 }
 
-const ListPopup: FC<ListPopupProps> = ({
-                                           onClose,
-                                           onBack,
-                                           title,
-                                           children,
-                                       }) => {
 const ListPopup: FC<ListPopupProps> = ({
                                            onClose,
                                            onBack,
@@ -61,8 +53,8 @@ const ListPopup: FC<ListPopupProps> = ({
 }
 
 export default ListPopup;
-    )
-}
+    
+
 
 // export const ListPopup = ({onClose, title, children, onBack, backgroundColor}: ListPopupProps) => {
 //     return (
@@ -180,5 +172,3 @@ export default ListPopup;
 //     );
 // }
 
-
-export default ListPopup;
