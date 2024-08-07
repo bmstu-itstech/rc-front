@@ -4,6 +4,7 @@ import backIcon from "../../../../assets/icons/back.svg";
 import Button from "../Button";
 import {AppTextTheme} from "../../theme";
 
+
 interface ListPopupProps {
     onClose?: () => void,
     onBack?: () => void
@@ -33,7 +34,7 @@ const ListPopup: FC<ListPopupProps> = ({
                 className={'tw-h-screen  lg:tw-w-full tw-opacity-70 tw-bg-black tw-overflow-clip'}
                 onClick={onClose}
             ></div>
-            <div className={'tw-h-screen tw-w-full tw-bg-red-700 tw-relative'}>
+            <div className={'tw-h-screen tw-w-full tw-bg-red-500 tw-relative'}>
                 <div className={'tw-absolute tw-inset-0 tw-bottom-auto tw-flex tw-justify-between tw-p-10 xl:tw-p-20'}>
                     <Button onClick={onBack}>{onBack && <img src={backIcon} alt={'back icon'}/>}</Button>
                     <Button onClick={onClose}><img alt={'close icon'} src={closeIcon}/></Button>
@@ -45,10 +46,15 @@ const ListPopup: FC<ListPopupProps> = ({
                     {children}
                 </div>
                 <div className={'tw-h-4'}/>
+                <div className={'tw-h-4'}/>
             </div>
         </div>
     )
 }
+
+export default ListPopup;
+    
+
 
 // export const ListPopup = ({onClose, title, children, onBack, backgroundColor}: ListPopupProps) => {
 //     return (
@@ -166,5 +172,3 @@ const ListPopup: FC<ListPopupProps> = ({
 //     );
 // }
 
-
-export default ListPopup;
