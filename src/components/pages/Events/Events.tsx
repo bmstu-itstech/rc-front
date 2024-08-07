@@ -1,4 +1,5 @@
 import './events.scss'
+import './tailwindPreflight.css'
 
 import './tailwindPreflight.css'
 import React, {ReactElement, useState} from 'react';
@@ -14,7 +15,9 @@ import EventCard from "./widgets/EventCard";
 import {ShortEvent, Event, ShortQuestionnaire} from "./entity";
 import SliderNavigateButton from "./widgets/SliderNavigateButton";
 import {AppConfig} from "../../../core";
-
+import EventCard from "./widgets/EventCard";
+import {ShortEvent, Event, ShortQuestionnaire} from "./entity";
+import SliderNavigateButton from "./widgets/SliderNavigateButton";
 
 
 class Colors {
@@ -94,9 +97,9 @@ const LayoutComponent = ({children, backgroundImageUrl}: {
                             src={logo}
                             className={`
                             tw-absolute
-                            tw-mt-5 lg:tw-mt-15
-                            tw-ml-5 lg:tw-ml-15
-                            tw-h-12 tw-w-12 lg:tw-h-20 lg:tw-w-20 
+                            tw-mt-5 lg:tw-mt-15 xl:tw-mt-40
+                            tw-ml-5 lg:tw-ml-15 xl:tw-ml-40
+                            tw-h-12 tw-w-12 lg:tw-h-20 lg:tw-w-20 xl:tw-h-28 xl:tw-w-28
                             `}
                             alt='logo'
                             style={{
@@ -131,8 +134,7 @@ enum PopupType {
     participant,
 }
 
-
-export const EventsPage = () => {
+export const Events = () => {
     const [popup, setPopup] = useState<PopupType>(PopupType.none);
 
     const {data: events} = useQuery<ShortEvent[]>({
@@ -201,7 +203,7 @@ export const EventsPage = () => {
                                     setParticipant(questionnaire.id);
                                 }}
                             >
-                                {`Анкета от ${questionnaire.searcher_fio}`}
+                                    {`Анкета от ${questionnaire.searcher_fio}`}
                             </ListPopupTile>
                         )
                     }
