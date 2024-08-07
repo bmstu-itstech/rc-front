@@ -86,10 +86,16 @@ const AchieveCard = ({
                                 {description}
                             </p>
                             <div className={'d-flex flex-row tw-gap-3'}>
-                                <button className={'btn achieve-button-f-card tw-max-w-52'}>
+                                <button
+                                    className={
+                                        'btn achieve-button-f-card tw-max-w-52 tw-px-3 tw-py-2 tw-min-w-min'
+                                    }>
                                     Фото
                                 </button>
-                                <button className={'btn achieve-button-f-card tw-max-w-52'}>
+                                <button
+                                    className={
+                                        'btn achieve-button-f-card tw-max-w-52 tw-px-3 tw-py-2 tw-min-w-min'
+                                    }>
                                     СМИ
                                 </button>
                             </div>
