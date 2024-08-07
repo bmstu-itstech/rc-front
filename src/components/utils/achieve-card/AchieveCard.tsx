@@ -88,13 +88,13 @@ const AchieveCard = ({
                             <div className={'d-flex flex-row tw-gap-3'}>
                                 <button
                                     className={
-                                        'btn achieve-button-f-card tw-max-w-52 tw-px-3 tw-py-2 tw-min-w-min'
+                                        'btn achieve-button-f-card tw-max-w-52 tw-px-1 tw-py-2 tw-min-w-min'
                                     }>
                                     Фото
                                 </button>
                                 <button
                                     className={
-                                        'btn achieve-button-f-card tw-max-w-52 tw-px-3 tw-py-2 tw-min-w-min'
+                                        'btn achieve-button-f-card tw-max-w-52 tw-px-1 tw-py-2 tw-min-w-min'
                                     }>
                                     СМИ
                                 </button>
