@@ -44,6 +44,7 @@ label:hover {
   transition: .2s ease-out;
   color: white;
   font-size: clamp(25px, 80vw, 40px);
+  font-weight: 400;
 
   &:hover+.dot {
     width: calc(var(--dot-diametr)* var(--scale-pixel-koef));

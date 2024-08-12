@@ -32,7 +32,7 @@ const Menu = () => {
                     <div className={"list-group list-group-horizontal list-group-horizontal-menu list-group-flush"}>
                         <div className={"list-group list-group-flush justify-content-center"}>
                             <div className={"list-group-item  bg-transparent border-0 align-items-center d-flex justify-content-end my-auto ps-0"} >
-                                <p className={"text-item"}>
+                                <p className={"text-item tw-font-normal"}>
                                     <button className={"menu-button text-uppercase text-white"} data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                                         <Link className={"link"} to="/" >главная</Link>
                                     </button>

@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'tw-bg-red-700': 'rgba(193, 49, 0, 1)'
+        'tw-bg-red-700': 'rgba(193, 49, 0, 1)',
+        'orange-bg': '#C13100',
       },
       fontSize: {
         header: '75px',
