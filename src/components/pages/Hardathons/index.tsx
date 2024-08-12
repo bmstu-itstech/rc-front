@@ -2,6 +2,7 @@ import React, {FC, HTMLAttributes} from "react";
 import HardathonsCardSampleImage from '../../assets/images/hardathons-card-sample-image.png';
 import HardathonsBG from '../../assets/images/hardathons-bg.png';
 import {Link} from "react-router-dom";
+import "./hardathons.scss"
 
 interface HardathonCardProps {
     image: string;
@@ -11,9 +12,9 @@ const HardathonCard: FC<HardathonCardProps> = ({image}) => (
     <div
         className={
             `
+            h-card
             tw-aspect-hardathon-card
             tw-min-w-96
-            tw-w-2/5
             tw-content-center
             tw-rounded-7xl
             tw-text-center
