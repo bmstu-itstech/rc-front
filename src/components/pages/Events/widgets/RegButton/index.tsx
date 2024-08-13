@@ -1,6 +1,7 @@
 import {AppColors, AppTextTheme} from "../../theme";
 import React, {FC} from "react";
 import Props from "./Reg.props";
+import '../../events.scss'
 
 
 const RegButton: FC<Props> = ({onClick}) => {
@@ -11,8 +12,7 @@ const RegButton: FC<Props> = ({onClick}) => {
             }
             onClick={onClick}
         >
-            <div style={{
-                backgroundColor: AppColors.red,
+            <div className={'lp-color'} style={{
                 content: '',
                 alignSelf: 'center',
                 width: 27,
