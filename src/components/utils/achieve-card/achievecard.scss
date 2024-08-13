@@ -307,7 +307,7 @@ a {
     }
 
     & .achieve-description {
-        font-size: calc(var(--scale-pixel-koef) * clamp(20px, 1.4vw, 40px));
+        font-size: calc(var(--scale-pixel-koef) * clamp(20px, 1.4vw, 24px));
         text-align: left;
         height: 100%;
         text-wrap: wrap;

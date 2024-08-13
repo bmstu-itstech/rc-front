@@ -105,7 +105,7 @@ export const ContactsPage = () => {
                 </div>
             </main>
             <footer>
-                <p className="text-white text-scale-large">Developed @ 2023 by ITS tech</p>
+                <p className="text-white text-scale-large">Developed @ 2024 by ITS tech</p>
             </footer>
 
         </section>
