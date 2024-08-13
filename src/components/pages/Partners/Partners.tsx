@@ -34,7 +34,7 @@ export const PartnersPage = () => {
                 <div key={index}>
                     <Link to={item.link}>
                         <div className={"partner-card"}>
-                            <img src={${AppConfig.apiUri}/${item.photo}}/>
+                            <img src={`${AppConfig.apiUri}/${item.photo}`} alt={item.title}/>
                         </div>
                     </Link>
                 </div>
