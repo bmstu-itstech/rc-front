@@ -34,7 +34,7 @@ export const PartnersPage = () => {
                 <div key={index}>
                     <Link to={item.link}>
                         <div className={"partner-card"}>
-                            <img src={`${AppConfig.apiUri}/${item.photo}`} />
+                            <img src={`${AppConfig.apiUri}/${item.photo}`} alt={item.title}/>
                         </div>
                     </Link>
                 </div>
@@ -48,9 +48,13 @@ export const PartnersPage = () => {
 
 
     return (
-        <section className={"page page-section"}>
-            <Logo title="наши партнёры" />
-            <Carousel items={partners ?? []} />
-        </section>
+        <>
+            <section className={"page page-section"}>
+                <Logo title="наши партнёры"/>
+                <div className={"carousel-outer"}>
+                    <Carousel items={partners ?? []}/>
+                </div>
+            </section>
+        </>
     )
 }
