@@ -1,6 +1,6 @@
 const eventPlaceholder = {
     id: 1,
-    title: "Матюша МС",
+    title: "Хардатон 2024",
     photo: '',
 }
 export {eventPlaceholder};
