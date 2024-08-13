@@ -7,6 +7,13 @@
     width: 100vw;
 }
 
+.carousel-outer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+}
+
 .partner-card {
     margin: 0 auto;
     display: flex;

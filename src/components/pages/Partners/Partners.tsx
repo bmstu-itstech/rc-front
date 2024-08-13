@@ -34,7 +34,7 @@ export const PartnersPage = () => {
                 <div key={index}>
                     <Link to={item.link}>
                         <div className={"partner-card"}>
-                            <img src={`${AppConfig.apiUri}/${item.photo}`} />
+                            <img src={`https://img.freepik.com/free-photo/the-adorable-illustration-of-kittens-playing-in-the-forest-generative-ai_260559-483.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1723420800&semt=ais_hybrid`}/>
                         </div>
                     </Link>
                 </div>
@@ -48,9 +48,13 @@ export const PartnersPage = () => {
 
 
     return (
-        <section className={"page page-section"}>
-            <Logo title="наши партнёры" />
-            <Carousel items={partners ?? []} />
-        </section>
+        <>
+            <section className={"page page-section"}>
+                <Logo title="наши партнёры"/>
+                <div className={"carousel-outer"}>
+                    <Carousel items={partners ?? []}/>
+                </div>
+            </section>
+        </>
     )
 }
