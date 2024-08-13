@@ -1,0 +1,71 @@
+.hardathon-card {
+  position: relative;
+  min-width: 24rem;
+  height: 548.42px;
+  width: 667px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 1.75rem;
+  border: 0.25rem solid #c53030;
+  background-size: cover;
+  background-repeat: no-repeat;
+  line-height: 52.8px;
+  font-size: 2.25rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-left: 125px;
+}
+
+.hardathons__background {
+  width: 100%;
+  min-height: 100vh;
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-bottom: 1rem;
+}
+
+.carousel_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hardathons__title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 75px;
+  font-weight: 400;
+  line-height: 90px;
+}
+
+.hardathon__title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 52.8px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .centered-text {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hardathons__background {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  .hardathons__title {
+    font-size: 4.375rem;
+  }
+}

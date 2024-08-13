@@ -66,7 +66,7 @@ export const HardathonPage = () => {
                                 Валерий Бизиков</p>
                         </div>
                         <div className={"buttons"}>
-                            <Link to={"/hardathons/1/details"}>
+                            <Link to={"/hardathons.ts.ts/1/details"}>
                                 <button className={"event-btn w-400"}>
                                     <p className="fw-bolder fs-4 text-uppercase text-light m-0">подробнее</p>
                                 </button>
