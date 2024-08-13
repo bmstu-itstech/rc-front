@@ -4,6 +4,7 @@ import './achievecard.scss';
 import arrow from '../../assets/icons/arrow.svg';
 import {useLayoutEffect, useRef, useState, Ref} from 'react';
 import {AppConfig} from '../../../core';
+import {Link} from "react-router-dom";
 
 const AchieveCard = ({
     isLarge = false,
@@ -55,7 +56,7 @@ const AchieveCard = ({
             </div>
 
             <div className='d-flex achieve-desktop border-0 p-0 bg-transparent'>
-                <a className={'card achieve-card-desktop h-100'} href={link_to_media}>
+                <div className={'card achieve-card-desktop h-100'}>
                     <img
                         className={'achieve-photo'}
                         src={`${AppConfig.apiUri}${photo}`}
@@ -86,22 +87,22 @@ const AchieveCard = ({
                                 {description}
                             </p>
                             <div className={'d-flex flex-row tw-gap-3'}>
-                                <button
+                                <Link to={photo_album_url}
                                     className={
                                         'btn achieve-button-f-card tw-max-w-52 tw-px-1 tw-py-2 tw-min-w-min'
                                     }>
                                     Фото
-                                </button>
-                                <button
+                                </Link>
+                                <Link to={link_to_media}
                                     className={
                                         'btn achieve-button-f-card tw-max-w-52 tw-px-1 tw-py-2 tw-min-w-min'
                                     }>
                                     СМИ
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
             <script src='scrollIntoView.js'></script>
         </div>
