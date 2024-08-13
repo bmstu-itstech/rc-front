@@ -1,8 +1,7 @@
 .hardathon-card {
   position: relative;
   min-width: 24rem;
-  height: 548.42px;
-  width: 667px;
+  width: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +14,6 @@
   font-size: 2.25rem;
   font-weight: normal;
   text-transform: uppercase;
-  margin-left: 125px;
 }
 
 .hardathons__background {
@@ -52,6 +50,10 @@
   font-weight: 400;
   line-height: 52.8px;
   text-transform: uppercase;
+}
+
+.slick-list {
+  padding-left: 100px !important;
 }
 
 @media (min-width: 768px) {

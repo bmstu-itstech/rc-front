@@ -98,8 +98,8 @@ const HardathonsPage: FC<HTMLAttributes<HTMLDivElement>> = () => {
                  style={{ backgroundImage: `linear-gradient(180deg, rgba(193, 49, 0, 0) 0%, rgba(193, 49, 0, 0.12) 100%), url(${HardathonsBG})`, backgroundSize: "cover"}}>
                 <div className={'tw-h-24 md:tw-h-10 lg:tw-h-20'} />
                 <h2 className={"hardathons__title"}>ХАРДАТОНЫ</h2>
-                <div className={'tw-h-10 lg:tw-h-24 xl:tw-h-36'} />
-                <div className="flex justify-center">
+                <div className={'tw-h-10 lg:tw-h-14 xl:tw-h-20'} />
+                <div className="justify-center">
                     <div className="carousel-container tw-relative">
                         <Carousel items={hardathons ?? []} />
                     </div>
