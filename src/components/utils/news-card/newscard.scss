@@ -13,8 +13,8 @@
     -webkit-user-drag: none;
 
     & .news-photo {
-        max-height: clamp(40%, 12vw, 45%);
-        min-height: clamp(40%, 12vw, 45%);
+        max-height: clamp(35%, 12vw, 40%);
+        min-height: clamp(35%, 12vw, 40%);
         // min-height: 40%; // unknwn behavior
         & img {
             object-fit: cover;
