@@ -17,7 +17,7 @@ import {HomePage} from "./components/pages/Home/Home";
 import {HardathonPage} from "./components/pages/Hardathon/Hardathon";
 import {ProjectDetails} from "./components/pages/Hardathon/ProjectDetails/ProjectDetails";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import HardathonsPage from "./components/pages/Hardathons";
+import HardathonsPage from "./components/pages/Hardathons/Hardathons";
 
 const queryClient = new QueryClient()
 
@@ -38,8 +38,8 @@ function App() {
                     <Route path="/partners" element={<PartnersPage/>}/>
                     <Route path="/contacts" element={<ContactsPage/>}/>
                     <Route path="/hardathons" element={<HardathonsPage/>}/>
-                    <Route path="/hardathons/1" element={<HardathonPage/>}/>
-                    {/*<Route path="/hardathons/:id/partners" element={<PartnersHardathon/>} />*/}
+                    <Route path="/hardathons/:id" element={<HardathonPage/>}/>
+                    {/*<Route path="/hardathons.ts.ts/:id/partners" element={<PartnersHardathon/>} />*/}
                     <Route path="/hardathons/:id/details" element={<ProjectDetails/>}/>
 
                 </Routes>
