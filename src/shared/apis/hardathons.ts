@@ -1,6 +1,5 @@
 import { client } from './axios';
 import {Hardathons} from "../../domain/entities/hardathons";
-import {AppConfig} from "../../core";
 
 const hardathonsList: () => Promise<Hardathons[]> = async () => {
     const res = await client.get(`/hardathons/`);

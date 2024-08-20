@@ -52,7 +52,6 @@ const SamplePrevArrow: FC<any> = (props) => {
                 width: 61,
                 height: 61,
                 position: 'absolute',
-                left: 0,
                 zIndex: 1}}
             onClick={onClick}
         />
@@ -67,7 +66,7 @@ const Carousel: FC<{ items: Hardathons[] }> = ({ items }) => {
         slidesToShow: 2,
         slidesToScroll: 1,
         nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
+        prevArrow: <SamplePrevArrow />
     };
 
     return (
@@ -99,10 +98,8 @@ const HardathonsPage: FC<HTMLAttributes<HTMLDivElement>> = () => {
                 <div className={'tw-h-24 md:tw-h-10 lg:tw-h-20'} />
                 <h2 className={"hardathons__title"}>ХАРДАТОНЫ</h2>
                 <div className={'tw-h-10 lg:tw-h-14 xl:tw-h-20'} />
-                <div className="justify-center">
-                    <div className="carousel-container tw-relative">
-                        <Carousel items={hardathons ?? []} />
-                    </div>
+                <div className="carousel-container">
+                    <Carousel items={hardathons ?? []} />
                 </div>
             </div>
         </>
