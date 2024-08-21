@@ -4,6 +4,9 @@ import {Link, useParams} from "react-router-dom";
 import {Hardathon} from "../../../domain/entities/hardathon";
 import {hardathonElement} from "../../../shared/apis/hardathon";
 import { useQuery } from '@tanstack/react-query';
+import {AppConfig} from "../../../core";
+import bizikov from "../../assets/images/bizikov.png"
+import React from "react";
 
 
 export const HardathonPage = () => {
@@ -18,10 +21,8 @@ export const HardathonPage = () => {
             <Logo title={hardathon?.title}/>
             <div className={"board-outer d-flex justify-content-center"}>
                 <div className="board">
-                    <div className={"bizikov-pic"}>
-                        <div className={"d-flex justify-content-center"}>
-                            <img src={hardathon?.main_organizer_photo} alt=""/>
-                        </div>
+                    <div className={"main-pic-container"}>
+                        <img className={"main-pic"} src={bizikov}/*{`${AppConfig.apiUri}${hardathon?.main_organizer_photo}`}*/ alt=""/>
                     </div>
                     <div className={"box-hardathon d-inline-block"}>
                         <div className={"quote"}>
