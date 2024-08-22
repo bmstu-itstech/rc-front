@@ -257,7 +257,7 @@ export const EventsPage = () => {
                         <ListPopupTile onClick={() => window.open(participant?.seacher_VK)}>Вконтакте</ListPopupTile>,
                         <ListPopupTile>Количество людей: {participant?.participants_count}</ListPopupTile>,
                         <ListPopupTile>
-                            <div style={{minHeight: 200, padding: '10px'}}>
+                            <div style={{minHeight: 200}}>
                                 Компетенции:
                                 <p style={{color: '#595959', display: 'block'}}>
                                     {participant?.required_competencies}
@@ -265,7 +265,7 @@ export const EventsPage = () => {
                             </div>
                         </ListPopupTile>,
                         <ListPopupTile>
-                            <div style={{minHeight: 200, padding: '10px'}}>
+                            <div style={{minHeight: 200}}>
                                 Дополнительная информация:
                                 <p style={{color: '#595959', display: 'block'}}>
                                     {participant?.additional}
