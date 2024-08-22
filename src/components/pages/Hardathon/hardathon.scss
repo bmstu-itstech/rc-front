@@ -1,11 +1,16 @@
-.bizikov-pic {
+.main-pic-container {
     width: 650px;
     height: 750px;
     display: inline-block;
+    position: relative;
+    margin-right: 10px;
+}
 
-    img {
-        margin: -211px;
-    }
+.main-pic {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
 }
 
 .quote {
@@ -111,10 +116,12 @@
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url("../../../../src/components/assets/images/background.svg") no-repeat;
     background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    overflow: auto;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
     scrollbar-color: rgb(193 49 0 / 80%) transparent;
+    padding-bottom: 0 !important;
 }
 
 .line {
