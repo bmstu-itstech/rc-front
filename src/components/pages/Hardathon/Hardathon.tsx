@@ -22,7 +22,7 @@ export const HardathonPage = () => {
             <div className={"board-outer d-flex justify-content-center"}>
                 <div className="board">
                     <div className={"main-pic-container"}>
-                        <img className={"main-pic"} src={bizikov}/*{`${AppConfig.apiUri}${hardathon?.main_organizer_photo}`}*/ alt=""/>
+                        <img className={"main-pic"} src={`${AppConfig.apiUri}${hardathon?.main_organizer_photo}`} alt=""/>
                     </div>
                     <div className={"box-hardathon d-inline-block"}>
                         <div className={"quote"}>
