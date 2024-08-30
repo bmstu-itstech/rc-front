@@ -1,7 +1,7 @@
 .hardathon-card {
   position: relative;
-  min-width: 24rem;
-  width: 600px;
+  height: 548.42px;
+  width: 667px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,9 +27,14 @@
 }
 
 .carousel_container {
-  position: relative;
-  display: flex;
-  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  display: block;
+}
+
+.slick-list {
+  margin-left: 68px !important;
+  margin-right: 43px !important;
 }
 
 .hardathons__title {
@@ -50,10 +55,6 @@
   font-weight: 400;
   line-height: 52.8px;
   text-transform: uppercase;
-}
-
-.slick-list {
-  padding-left: 100px !important;
 }
 
 @media (min-width: 768px) {
