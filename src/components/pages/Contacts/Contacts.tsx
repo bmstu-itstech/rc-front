@@ -61,8 +61,7 @@ export const ContactsPage = () => {
                         <div className={"card col-4 "}>
                             <div className="row row-cols-1 links information-card  text-start h-100">
                                 <div className="col d-flex flex-wrap ">
-                                    <span className="text-scale-normal">Телефон: <a className="text-weight-normal text-scale-normal" href="tel:+78005553535">8(906)568-96-73</a></span>
-                                    <span className="text-scale-normal">Email: <a className="text-weight-normal text-scale-normal" href="mailto:cmr@bmstu.ru">cmr@bmstu.ru</a></span>
+                                    <span className="text-scale-normal">Email: <a className="text-weight-normal text-scale-normal" href="mailto:robotics.bmstu@yandex.ru">robotics.bmstu@yandex.ru</a></span>
                                 </div>
                                 <a className="col d-flex more-arrow  text-weight-normal text-scale-normal w-auto flex-wrap" href={"https://bmstu.ru/about/obrabotka-dannyh"}>Политика перс. данных</a>
                                 <a className="col d-flex more-arrow  text-weight-normal text-scale-normal w-auto flex-wrap" href={"https://bmstu.ru/"}>Сайт Университета</a>
